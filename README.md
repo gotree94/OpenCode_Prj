@@ -659,12 +659,54 @@ opencode
 ```
 
 * WebUI 사용
+   * OpenCode는 터미널 기반의 AI 코딩 에이전트로, 자체적으로 웹 UI 기능을 내장하고 있거나 외부 Open WebUI와 연동하여 사용할 수 있습니다.
+   * 사용 목적에 따라 두 가지 방법 중 선택하여 설치 및 실행할 수 있습니다.
 
+1. OpenCode 내장 웹 UI 실행 방법
+   * OpenCode는 별도의 추가 설치 없이 명령어를 통해 즉시 웹 인터페이스를 띄울 수 있는 기능을 제공합니다.
+   * 실행 명령어: 터미널에서 다음 명령어를 입력합니다.
+
+```Bash
+opencode web
 ```
-OpenCode는 터미널 기반의 AI 코딩 에이전트로, 자체적으로 웹 UI 기능을 내장하고 있거나 외부 Open WebUI와 연동하여 사용할 수 있습니다.  사용 목적에 따라 두 가지 방법 중 선택하여 설치 및 실행할 수 있습니다.1. OpenCode 내장 웹 UI 실행 방법OpenCode는 별도의 추가 설치 없이 명령어를 통해 즉시 웹 인터페이스를 띄울 수 있는 기능을 제공합니다.  실행 명령어: 터미널에서 다음 명령어를 입력합니다.Bashopencode web
-특징: 이 명령어를 실행하면 로컬 호스트(보통 [http://127.0.0.1](http://127.0.0.1) 또는 설정된 포트)에서 작동하는 웹 UI가 브라우저에 자동으로 열립니다.단축키: OpenCode TUI(터미널 UI) 실행 중 Ctrl + P를 눌러 커맨드 팔레트를 연 뒤 webUI를 입력하여 실행할 수도 있습니다.  2. 외부 Open WebUI와 OpenCode 연동 방법Open WebUI(구 Ollama WebUI)를 별도로 설치하여 OpenCode의 모델들을 사용하고 싶다면, OpenCode를 서버 모드로 실행한 뒤 연동해야 합니다.  1단계: OpenCode 서버 실행Open WebUI가 OpenCode의 API를 호출할 수 있도록 헤드리스 서버 모드로 실행합니다.  Bashopencode serve
-기본적으로 http://localhost:4096 등에서 API 서버가 가동됩니다.  2단계: Open WebUI 설치 (Docker 권장)Open WebUI 공식 설치 방식인 Docker를 사용하여 설치합니다.  Bashdocker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main
-3단계: API 연결 설정브라우저에서 http://localhost:3000에 접속합니다.  Settings > Connections 메뉴로 이동합니다.  OpenAI API 연동 항목에 OpenCode 서버 주소를 입력합니다.  API URL: [https://opencode.ai/zen/v1/](https://opencode.ai/zen/v1/) (Zen API 사용 시) 또는 로컬 서버 주소API Key: OpenCode에서 발급받은 API 키를 입력합니다.참고: OpenCode 설치가 안 되어 있다면?  OpenCode 자체가 아직 설치되지 않았다면 아래 스크립트로 빠르게 설치할 수 있습니다.  macOS/Linux/WSL: curl -fsSL [https://opencode.ai/install](https://opencode.ai/install) | bashWindows (PowerShell): pnpm install -g opencode-ai 또는 scoop install opencode
+   * 특징: 이 명령어를 실행하면 로컬 호스트(보통 [http://127.0.0.1](http://127.0.0.1) 또는 설정된 포트)에서 작동하는 웹 UI가 브라우저에 자동으로 열립니다.
+   * 단축키: OpenCode TUI(터미널 UI) 실행 중 Ctrl + P를 눌러 커맨드 팔레트를 연 뒤 webUI를 입력하여 실행할 수도 있습니다.
+
+2. 외부 Open WebUI와 OpenCode 연동 방법
+   * Open WebUI(구 Ollama WebUI)를 별도로 설치하여 OpenCode의 모델들을 사용하고 싶다면, OpenCode를 서버 모드로 실행한 뒤 연동해야 합니다.
+
+   * 1단계: OpenCode 서버 실행
+      * Open WebUI가 OpenCode의 API를 호출할 수 있도록 헤드리스 서버 모드로 실행합니다.
+
+```Bash
+opencode serve
+```
+   * 기본적으로 http://localhost:4096 등에서 API 서버가 가동됩니다.
+
+   * 2단계: Open WebUI 설치 (Docker 권장)Open WebUI 공식 설치 방식인 Docker를 사용하여 설치합니다.
+
+```Bash
+docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main
+```
+
+   * 3단계: API 연결 설정
+      * 브라우저에서 http://localhost:3000에 접속합니다.
+      * Settings > Connections 메뉴로 이동합니다.
+      * OpenAI API 연동 항목에 OpenCode 서버 주소를 입력합니다.
+         * API URL: [https://opencode.ai/zen/v1/](https://opencode.ai/zen/v1/) (Zen API 사용 시) 또는 로컬 서버 주소
+         * API Key: OpenCode에서 발급받은 API 키를 입력합니다.
+
+   * 참고: OpenCode 설치가 안 되어 있다면?
+      * OpenCode 자체가 아직 설치되지 않았다면 아래 스크립트로 빠르게 설치할 수 있습니다.
+         * macOS/Linux/WSL:
+         ```
+         curl -fsSL [https://opencode.ai/install](https://opencode.ai/install) | bash
+         ```
+         * Windows (PowerShell):
+         ```
+         pnpm install -g opencode-ai 또는 scoop install opencode
+         ```
+         
 ```
 
 ---
