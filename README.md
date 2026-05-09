@@ -26,6 +26,13 @@ npm notice To update run: npm install -g npm@11.14.1
 npm notice
 ```
 
+## 2. Opencode 실행
+
+```
+opencode
+```
+
+<img src="000.png">
 
 
 
