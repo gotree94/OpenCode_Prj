@@ -34,6 +34,8 @@ opencode
 
 <img src="000.png">
 
+## 3. Mode : Tab 버튼 : Plan <-> Build
+
 
 
 
