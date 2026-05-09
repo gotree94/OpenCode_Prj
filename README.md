@@ -706,9 +706,6 @@ docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui ghc
          ```
          pnpm install -g opencode-ai 또는 scoop install opencode
          ```
-         
-```
-
 ---
 
 ```
