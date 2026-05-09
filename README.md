@@ -709,6 +709,20 @@ MinMAx M2.1
    * 이유: 지치지 않는 노동력을 상징하므로, 수십 개의 리포지토리를 체크하거나 단순 오타 수정 등 양으로 승부하는 작업에 유리합니다.
 
 
+```
+간단한 투두리스트 웹앱을 만들어줘, 디자인은 모던하게 ulw
+```
+
+<img src="015.png"> <br>
+<img src="016.png"> <br>
+<img src="017.png"> <br>
+<img src="018.png"> <br>
+<img src="019.png"> <br>
+<img src="020.png"> <br>
+<img src="021.png"> <br>
+<img src="022.png"> <br>
+
+
 
 
 
