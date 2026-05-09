@@ -667,6 +667,8 @@ OpenCode는 터미널 기반의 AI 코딩 에이전트로, 자체적으로 웹 U
 3단계: API 연결 설정브라우저에서 http://localhost:3000에 접속합니다.  Settings > Connections 메뉴로 이동합니다.  OpenAI API 연동 항목에 OpenCode 서버 주소를 입력합니다.  API URL: [https://opencode.ai/zen/v1/](https://opencode.ai/zen/v1/) (Zen API 사용 시) 또는 로컬 서버 주소API Key: OpenCode에서 발급받은 API 키를 입력합니다.참고: OpenCode 설치가 안 되어 있다면?  OpenCode 자체가 아직 설치되지 않았다면 아래 스크립트로 빠르게 설치할 수 있습니다.  macOS/Linux/WSL: curl -fsSL [https://opencode.ai/install](https://opencode.ai/install) | bashWindows (PowerShell): pnpm install -g opencode-ai 또는 scoop install opencode
 ```
 
+---
+
 ```
 sisyphus - Ultraworker
 Heapaestus - Deep Agent
@@ -678,7 +680,33 @@ Atlas - Plan Executer
 MinMAx M2.1
 ```
 
+## 🏛️ OpenCode 에이전트별 역할 및 선택 가이드
 
+| 모델명 | 상징적 의미 | 실제 역할 (추정) | 추천 작업 유형 | 
+|:--------:|:--------:|:--------:|:--------:|
+| Sisyphus (Ultraworker) | 끊임없이 돌을 올리는 형벌 | 반복적 & 고부하 작업 | 단순 반복 코딩, 대규모 리포지토리 코드 정리, 단순 버그 수정 | 
+| Hephaestus (Deep Agent) | 대장장이와 기술의 신 | 정밀한 기술 설계 & 구현 | Verilog 설계, RTL 코딩, 하드웨어 아키텍처(CPU/ALU) 설계 | 
+| Prometheus (Plan Builder) | 인간에게 불(지혜)을 준 신 | 전략 수립 및 아키텍처 기획 | 프로젝트 초기 구조 설계, 기술 문서(README) 초안 작성, 전체 워크플로우 기획 | 
+| Atlas (Plan Executer) | 하늘을 떠받치는 신 | 강력한 실행 및 연동 | 로봇 시뮬레이션(Indy7) 제어 스크립트 실행, GitHub 자동화 스크립트 실행 및 결과 검증 | 
+
+## 🎯 상황별 추천 선택
+1. Verilog 설계 및 FPGA 로직 구현 시
+   * 추천: Hephaestus - Deep Agent
+   * 이유:
+      * 기술의 신 헤파이토스라는 이름답게, 복잡한 로직 설계나 정밀한 구현 능력이 가장 뛰어날 것으로 예상됩니다.
+      * 32-bit CPU 아키텍처나 8x8 CNN 분류기 같은 Deep Engineering 작업에 가장 적합합니다.
+
+2. 로봇 시뮬레이션 연동 및 자동화 스크립트 실행 시
+   * 추천: Atlas - Plan Executer
+   * 이유: 기획된 계획을 실제로 '수행'하는 데 최적화된 모델입니다. 작성된 Python 스크립트나 Shell 스크립트(update_all.sh 등)를 환경에 맞춰 실제로 돌려보고 결과를 피드백받기에 좋습니다.
+
+3. 프로젝트 전체 문서화 및 커리큘럼 설계 시
+   * 추천: Prometheus - Plan Builder
+   * 이유: 교육자로서 학생들을 위한 반도체 커리큘럼을 짜거나, 복잡한 프로젝트의 로드맵을 그려야 할 때 '지혜'를 빌려주는 프로메테우스가 효율적입니다.
+
+4. 단순한 코드 리팩토링이나 반복 수정 시
+   * 추천: Sisyphus - Ultraworker
+   * 이유: 지치지 않는 노동력을 상징하므로, 수십 개의 리포지토리를 체크하거나 단순 오타 수정 등 양으로 승부하는 작업에 유리합니다.
 
 
 
