@@ -36,6 +36,18 @@ opencode
 
 ## 3. Mode : Tab 버튼 : Plan <-> Build
 
+<img src="001.png">
+
+<img src="002.png">
+
+## 4. 다른모델 선택
+   * "/"
+   * /connect 에서 모델을 선택하면 됨.
+
+
+
+
+
 
 
 
