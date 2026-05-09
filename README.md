@@ -667,7 +667,16 @@ OpenCode는 터미널 기반의 AI 코딩 에이전트로, 자체적으로 웹 U
 3단계: API 연결 설정브라우저에서 http://localhost:3000에 접속합니다.  Settings > Connections 메뉴로 이동합니다.  OpenAI API 연동 항목에 OpenCode 서버 주소를 입력합니다.  API URL: [https://opencode.ai/zen/v1/](https://opencode.ai/zen/v1/) (Zen API 사용 시) 또는 로컬 서버 주소API Key: OpenCode에서 발급받은 API 키를 입력합니다.참고: OpenCode 설치가 안 되어 있다면?  OpenCode 자체가 아직 설치되지 않았다면 아래 스크립트로 빠르게 설치할 수 있습니다.  macOS/Linux/WSL: curl -fsSL [https://opencode.ai/install](https://opencode.ai/install) | bashWindows (PowerShell): pnpm install -g opencode-ai 또는 scoop install opencode
 ```
 
+```
+sisyphus - Ultraworker
+Heapaestus - Deep Agent
+Prometheus  - Plan Builder
+Atlas - Plan Executer
+```
 
+```
+MinMAx M2.1
+```
 
 
 
