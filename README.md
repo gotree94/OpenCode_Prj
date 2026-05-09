@@ -190,6 +190,11 @@ opencode
 
 ---
 
+## OpenWebUI
+
+* Ctrl + 'p'
+
+
 
 
 
