@@ -198,6 +198,353 @@ opencode
 
 ## 예제1 : 간단한 투두리스트 웹앱을 만들어줘. 디자인은 모던하게.
 
+
+```
+# Wrote todo-app\index.html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todo App</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: #f1f5f9;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 60px 24px;
+  color: #1e293b;
+}
+.container {
+  width: 100%;
+  max-width: 540px;
+}
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+.subtitle {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+.input-row input {
+  flex: 1;
+  padding: 14px 18px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: inherit;
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.input-row input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99,102,241,0.12);
+}
+.input-row input::placeholder {
+  color: #94a3b8;
+}
+.btn {
+  padding: 14px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: #6366f1;
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99,102,241,0.35);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+.stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: #64748b;
+}
+.stats .count {
+  font-weight: 600;
+  color: #1e293b;
+}
+.filters {
+  display: flex;
+  gap: 6px;
+}
+.filter-btn {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-btn:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+.filter-btn.active {
+  background: #6366f1;
+  color: #fff;
+}
+.todo-list {
+  list-style: none;
+}
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  padding: 16px 18px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  transition: all 0.2s;
+  animation: slideIn 0.25s ease;
+}
+.todo-item:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  transform: translateY(-1px);
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.todo-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e1;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s;
+  background: #fff;
+}
+.todo-check:hover {
+  border-color: #6366f1;
+}
+.todo-check.checked {
+  background: #6366f1;
+  border-color: #6366f1;
+}
+.todo-check.checked::after {
+  content: '';
+  width: 8px;
+  height: 4px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg) translateY(-1px);
+  margin-top: -1px;
+}
+.todo-text {
+  flex: 1;
+  font-size: 15px;
+  line-height: 1.4;
+  word-break: break-word;
+  cursor: pointer;
+  padding: 2px 0;
+}
+.todo-text.done {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+.todo-delete {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.todo-delete:hover {
+  background: #fef2f2;
+  color: #ef4444;
+}
+.empty {
+  text-align: center;
+  padding: 48px 24px;
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.empty-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+.clear-all {
+  margin-top: 16px;
+  text-align: center;
+}
+.btn-ghost {
+  background: transparent;
+  color: #94a3b8;
+  font-size: 13px;
+  padding: 8px 16px;
+}
+.btn-ghost:hover {
+  color: #ef4444;
+  background: #fef2f2;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>할 일</h1>
+  <p class="subtitle"><span id="dateDisplay"></span></p>
+  <div class="input-row">
+    <input type="text" id="todoInput" placeholder="새 할 일을 입력하세요..." autofocus>
+    <button class="btn btn-primary" id="addBtn">추가</button>
+  </div>
+  <div class="stats">
+    <span>총 <span class="count" id="totalCount">0</span>개</span>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">전체</button>
+      <button class="filter-btn" data-filter="active">진행중</button>
+      <button class="filter-btn" data-filter="done">완료</button>
+    </div>
+  </div>
+  <ul class="todo-list" id="todoList"></ul>
+  <div class="clear-all">
+    <button class="btn btn-ghost" id="clearDoneBtn">완료된 항목 삭제</button>
+  </div>
+</div>
+<script>
+const STORAGE_KEY = 'todos';
+let todos = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+let filter = 'all';
+const todoInput = document.getElementById('todoInput');
+const addBtn = document.getElementById('addBtn');
+const todoList = document.getElementById('todoList');
+const totalCount = document.getElementById('totalCount');
+const dateDisplay = document.getElementById('dateDisplay');
+function updateDate() {
+  const now = new Date();
+  const y = now.getFullYear();
+  const m = String(now.getMonth() + 1).padStart(2, '0');
+  const d = String(now.getDate()).padStart(2, '0');
+  const days = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
+  const day = days[now.getDay()];
+  dateDisplay.textContent = `${y}. ${m}. ${d}. ${day}`;
+}
+updateDate();
+function save() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
+}
+function render() {
+  const filtered = todos.filter(t => {
+    if (filter === 'active') return !t.done;
+    if (filter === 'done') return t.done;
+    return true;
+  });
+  totalCount.textContent = todos.length;
+  if (filtered.length === 0) {
+    const msg = filter === 'all' ? '할 일을 추가해보세요!' : filter === 'active' ? '모든 할 일을 완료했습니다!' : '완료된 항목이 없습니다.';
+    todoList.innerHTML = `<li class="empty"><div class="empty-icon">📋</div>${msg}</li>`;
+    return;
+  }
+  todoList.innerHTML = filtered.map(t => `
+    <li class="todo-item" data-id="${t.id}">
+      <div class="todo-check ${t.done ? 'checked' : ''}" onclick="toggle(${t.id})"></div>
+      <span class="todo-text ${t.done ? 'done' : ''}" onclick="toggle(${t.id})">${escapeHtml(t.text)}</span>
+      <button class="todo-delete" onclick="remove(${t.id})">✕</button>
+    </li>
+  `).join('');
+}
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+function addTodo() {
+  const text = todoInput.value.trim();
+  if (!text) return;
+  todos.push({ id: Date.now(), text, done: false });
+  todoInput.value = '';
+  save();
+  render();
+  todoInput.focus();
+}
+function toggle(id) {
+  const todo = todos.find(t => t.id === id);
+  if (todo) {
+    todo.done = !todo.done;
+    save();
+    render();
+  }
+}
+function remove(id) {
+  todos = todos.filter(t => t.id !== id);
+  save();
+  render();
+  todoInput.focus();
+}
+addBtn.addEventListener('click', addTodo);
+todoInput.addEventListener('keydown', e => { if (e.key === 'Enter') addTodo(); });
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filter = btn.dataset.filter;
+    render();
+  });
+});
+document.getElementById('clearDoneBtn').addEventListener('click', () => {
+  todos = todos.filter(t => !t.done);
+  save();
+  render();
+});
+render();
+</script>
+</body>
+</html>
+```
+
 ## 예제2 : 에이전트 협업
    * oh-my-opencode
 
