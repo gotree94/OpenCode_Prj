@@ -546,7 +546,110 @@ render();
 ```
 
 ## 예제2 : 에이전트 협업
+
    * oh-my-opencode
+```
+npx oh-my-opencode install
+```
+
+```
+Microsoft Windows [Version 10.0.26200.8246]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Administrator>npx oh-my-opencode install
+Need to install the following packages:                                                                                                                                                                 oh-my-opencode@4.0.0
+Ok to proceed? (y) y
+
+T   oMoMoMoMo...
+|
+o  OpenCode 1.14.41 [OK]
+|
+o  Do you have a Claude Pro/Max subscription?
+|  No
+|
+o  Do you have an OpenAI/ChatGPT Plus subscription?
+|  No
+|
+o  Will you integrate Google Gemini?
+|  No
+|
+o  Do you have a GitHub Copilot subscription?
+|  No
+|
+o  Do you have access to OpenCode Zen (opencode/ models)?
+|  No
+|
+o  Do you have a Z.ai Coding Plan subscription?
+|  No
+|
+o  Do you have a Kimi For Coding subscription?
+|  No
+|
+o  Do you have an OpenCode Go subscription?
+|  No
+|
+o  Do you have a Vercel AI Gateway API key?
+|  No
+|
+o  Plugin added to C:\Users\Administrator\.config\opencode\opencode.json
+|
+o  Config written to C:\Users\Administrator\.config\opencode\oh-my-openagent.json
+|
+•  Note: Sisyphus agent performs best with Claude Opus 4.5+.
+|  Other models work but may have reduced orchestration quality.
+|
+!  No model providers configured. Using opencode/big-pickle as fallback.
+|
+o  Installation Complete -----------------------------------+
+|                                                           |
+|  Configuration Summary                                    |
+|                                                           |
+|    ○ Claude                                               |
+|    ○ OpenAI/ChatGPT (GPT-5.4 for Oracle)                  |
+|    ○ Gemini                                               |
+|    ○ GitHub Copilot (fallback)                            |
+|    ○ OpenCode Zen (opencode/ models)                      |
+|    ○ Z.ai Coding Plan (Librarian/Multimodal)              |
+|    ○ Kimi For Coding (Sisyphus/Prometheus fallback)       |
+|    ○ Vercel AI Gateway (universal proxy)                  |
+|                                                           |
+|  ────────────────────────────────────────                 |
+|                                                           |
+|  Model Assignment                                         |
+|                                                           |
+|    [i] Models auto-configured based on provider priority  |
+|    * Priority: Native > Copilot > OpenCode Zen > Z.ai     |
+|                                                           |
++-----------------------------------------------------------+
+|
+*  Installation complete!
+|
+|  Run opencode to start!
+|
+•  Anonymous telemetry is enabled by default. Disable it with OMO_SEND_ANONYMOUS_TELEMETRY=0 or OMO_DISABLE_POSTHOG=1.
+|
+•  Docs: docs/legal/privacy-policy.md and docs/legal/terms-of-service.md
+|
+o  The Magic Word --------------------------------------------------+
+|                                                                   |
+|  Include ultrawork (or ulw) in your prompt.                       |
+|  All features work like magic-parallel agents, background tasks,  |
+|  deep exploration, and relentless execution until completion.     |
+|                                                                   |
++-------------------------------------------------------------------+
+|
+|  ★ If you found this helpful, consider starring the repo!
+|
+|    gh api --silent --method PUT /user/starred/code-yeongyu/oh-my-openagent >/dev/null 2>&1 || true
+|
+—  oMoMoMoMo... Enjoy!
+```
+
+
+
+
+
+
 
 
 
