@@ -1,9 +1,22 @@
 # OpenCode_Prj
 
-https://youtu.be/cdJJ578gP6k
+* YOUTUBE :
+    * https://youtu.be/cdJJ578gP6k
 
-https://github.com/code-yeongyu/oh-my...
-https://opencode.ai/
+* Links
+    * https://github.com/code-yeongyu/oh-my-openagent
+    * https://github.com/code-yeongyu/oh-my-codex
+
+## 1. Install
+
+   * https://opencode.ai/
+
+```
+npm i -g opencode-ai
+```
+
+
+
 
 
 
