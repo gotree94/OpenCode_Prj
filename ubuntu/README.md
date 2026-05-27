@@ -13,6 +13,24 @@
 curl -fsSL https://opencode.ai/install | bash
 ```
 
+```bash
+# 방법 1: 현재 셸에 .bashrc 재적용
+source ~/.bashrc
+
+# 방법 2: 터미널 완전히 껐다가 새로 열기
+```
+
+그 다음에:
+
+```bash
+# 버전 확인
+opencode --version
+
+# 프로젝트 디렉토리로 이동 후 실행
+cd ~/Desktop/프로젝트폴더
+opencode
+```
+
 시스템을 자동으로 감지하여 최신 버전을 설치합니다.
 
 > 설치 경로 우선순위:
