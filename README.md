@@ -7,6 +7,10 @@
     * https://github.com/code-yeongyu/oh-my-openagent
     * https://github.com/code-yeongyu/oh-my-codex
 
+## 0. 사전 설치할것 (node.js)
+
+https://nodejs.org/dist/v24.18.0/node-v24.18.0-x64.msi
+
 ## 1. Install
 
    * https://opencode.ai/
