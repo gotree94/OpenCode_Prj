@@ -9,7 +9,8 @@
 
 ## 0. 사전 설치할것 (node.js)
 
-https://nodejs.org/dist/v24.18.0/node-v24.18.0-x64.msi
+* https://nodejs.org/dist/v24.18.0/node-v24.18.0-x64.msi
+* 설치 후에 anaconda prompot를 다시 실행하여 아래 과정을 수행 할것
 
 ## 1. Install
 
