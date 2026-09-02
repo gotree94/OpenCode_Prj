@@ -803,6 +803,20 @@ opencode --version
 ```
 (base) C:\Users\Administrator>opencode --version
 1.17.8
+
+(base) C:\Users\Administrator>npm install -g opencode-ai
+
+changed 3 packages in 2m
+npm notice
+npm notice New major version of npm available! 10.9.4 -> 12.0.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2
+npm notice To update run: npm install -g npm@12.0.2
+npm notice
+
+(base) C:\Users\Administrator>opencode --version
+1.18.26
+
+(base) C:\Users\Administrator>
 ```
 
 으로 가능합니다.
