@@ -771,6 +771,37 @@ MinMAx M2.1
 <img src="021.png"> <br>
 <img src="022.png"> <br>
 
+---
+
+## opencode를 업데이트하는 방법:
+
+* 가장 간단한 방법 — 설치 스크립트 재실행
+
+```
+curl -fsSL https://opencode.ai/install | bash
+```
+
+* 이미 설치되어 있어도 최신 버전으로 자동 업데이트됩니다.
+* Node.js 사용 시
+```
+npm install -g opencode-ai
+```
+
+* Windows (Chocolatey/Scoop)
+```
+choco upgrade opencode   # Chocolatey
+scoop update opencode    # Scoop
+```
+
+현재 설치된 버전 확인은 
+
+```
+opencode --version
+```
+
+으로 가능합니다.
+
+
 
 
 
