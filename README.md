@@ -799,6 +799,12 @@ scoop update opencode    # Scoop
 opencode --version
 ```
 
+
+```
+(base) C:\Users\Administrator>opencode --version
+1.17.8
+```
+
 으로 가능합니다.
 
 
